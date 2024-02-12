@@ -5,6 +5,6 @@ function logar(){
     if (login == "sdmarketdata" && senha == "M@rketdata@sd24"){
         location.href = "../html/home.html";
     }else{
-        alert('Acesso negado');
+        alert('USUÁRIO / SENHA INCORRETO!');
     }
 }
