@@ -91,7 +91,7 @@ h1{
 /*Imagem lado direito da tela*/
 .lado-direito{
     width: 100%;
-    background-image: url('./img/paisagens/galaxy.jpg');
+    background-image: url('/img/paisagens/galaxy.jpg');
     background-size: cover;
     background-position: center;
 }
