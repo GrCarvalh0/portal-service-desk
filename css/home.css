@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     font-family: 'poppins';
+    outline: none;
+    box-sizing: border-box;
 }
 
 html{
@@ -14,5 +16,65 @@ body{
     background-color: #18ade4;
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: max-content;   
+    max-height: max-content; 
+}
+
+main{
+    display: flex;
+}
+
+.lado-esquerdo{
+    display: flex;
+}
+
+.menu-esquerdo{
+    width: 100%;
+    background-color: #185874;
+    height: 99.99vh;
+    position: relative;
+    display: flex;
+    justify-content:start;
+    stroke: black;
+}
+
+.lado-direito{
+    width: 100%;
+    background-color: #6FBCE8;
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+    background: #223550;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    outline: none;
+}
+
+.listas{
+    display:block;
+    position:relative;
+    width: 230px;
+    height: 30px;
+    padding-top: 6px;
+    padding-left: 10px;
+    color: #fff;
+    height: 40px;
+    font-size: 13pt;
+}
+.listas a{
+    color: #fff;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.listas:hover{
+    background-color: #9CDEFA;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 500ms;
+    color: black;
 }
