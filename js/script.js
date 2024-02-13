@@ -3,9 +3,9 @@ function logar(){
     var senha = document.getElementById('pass').value;
 
     if (login == "sdmarketdata" && senha == "M@rketdata@sd24"){
-        alert('Acesso Permitido!');
-        location.href = "../html/home.html";
+        alert('Acesso permitido!')
+        location.href = "./html/home.html";
     }else{
-        alert('USUÁRIO / SENHA INCORRETO!');
+        alert('Usuário / senha incorreto!');
     }
 }
