@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hind+Madurai:wght@300;400;500;600;700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300&family=Public+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hind+Madurai:wght@300;400;500;600;700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@300&family=Public+Sans:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #18ade4;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content; 
+}
+
+/*Elemento que pega toda a página*/
+main{
+    display: flex;
+}
+
+/*Inicio das alterações do lado esquedo da página*/
+.lado-esquerdo{
+    display: flex;
+    font-family: 'poppins';
+}
+
+.menu-esquerdo{
+    width: 100%;
+    background-color: #223550;
+    height: 99.99vh;
+    position: relative;
+    display: flex;
+    justify-content:start;
+    stroke: black;
+}
+
+/*logo marketdata*/
+.logo{
+    width: 100%;
+    text-align: center;
+    background: #185874;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    outline: none;
+}
+
+/*menu lateral esquerdo*/
+.listas{
+    display:block;
+    position:relative;
+    width: 230px;
+    background-color: #9CDEFA;
+    font-weight: 600;
+    height: 30px;
+    padding-top: 6px;
+    padding-left: 10px;
+    color: #000000;
+    height: 30px;
+    font-size: 10pt;
+}
+.listas a{
+    color: #fff;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*fim das alterações do lado esquerdo*/
+
+/*Inicio das alterações do lado direito da página*/
+.lado-direito{
+    display: flex;
+    width: 100%;
+    padding: 20px 10px 0px 30px;
+    background-color: rgb(50,79,122);
+    background-size: cover;
+    background-position: center;
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: 700;
+}
+
+.primeira-coluna{
+    width: 100%;
+    display: block;
+}
+.menu{
+    margin-top: 30px;
+    column-count: 2;
+    column-gap: 20px;
+    list-style-type: none;
+}
+.menu li{
+    padding-top: 10px;
+}
+
+.btn-save-clear:hover{
+    background-color: #18ade4;
+    transition: 0.5s;
+}
+
+.other-types{
+    margin-top: 30px;
+    width: 100%;
+}
