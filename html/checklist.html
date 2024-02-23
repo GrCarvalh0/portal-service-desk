@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/checklist.css">
+    <link rel="shortcut icon" href="https://suporte.marketdata.com.br/images/favicon.ico" type="image/x-icon">
+    <title>Checklist</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <main>
+        <section class="lado-esquerdo">
+            <div class="menu-esquerdo">
+                <ul class="menu-listas">
+                    <div class="logo">
+                        <a href="https://intranet.marketdata.com.br"><img src="https://suporte.marketdata.com.br/images/logo-marketdata-branco-quadrado.png;jsessionid=40509163DCCD43B53E9CDBC49415164A" alt="logo marketdata" width="150"></a><br>
+                    </div>
+                    <li class="listas">Checklists de máquinas</li>
+                </ul>
+            </div>
+        </section>
+        <section class="lado-direito">
+            <div class="primeira-coluna" style="color: #ffffff;">
+                <p>Os softwares devem ser instalados na sequência indicada abaixo para cada tipo de imagem, a imagem padrão sempre deverá ser instalada
+                em todas as máquina que estiverem sendo preparadas pela equipe de Service Desk ou pelo responsável atual.</p>
+                <form action="" class="form-padrao" id="checkboxForm">
+                    <div class="menu-listas">
+                        <ul class="menu">
+                            <h4>Imagem padrão</h4>
+                            <li><input type="checkbox" class="check" name="opcao1"> Chrome - <a href="https://www.google.com/chrome/dr/download/?brand=JJTC&ds_kid=43700077650614093&gad_source=1&gclid=Cj0KCQiAoeGuBhCBARIsAGfKY7y3K1fLr1PHIYvWclgtBdRpmKzbUzB8ykgVD9m98FXQsNwybchDdMoaAnd0EALw_wcB&gclsrc=aw.ds" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao2"> Firefox - <a href="https://www.mozilla.org/pt-BR/firefox/new/" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao3"> Java - <a href="https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao4"> Adobe Reader - <a href="https://get.adobe.com/br/reader/" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao5"> Notepad++ - <a href="https://notepad-plus-plus.org/downloads/" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao6"> 7-zip - <a href="https://www.7-zip.org/download.html" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao7"> Filezilla - <a href="https://filezilla-project.org/download.php" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao8"> Framework 3.5 - <a href="#" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao9"> Dell Update - <a href="https://www.dell.com/support/home/pt-br/drivers/driversdetails?driverid=4985d" style="color: #00d9ff;">?</a></li>
+                            <li><input type="checkbox" class="check" name="opcao10"> Windows Update - <a href="#" style="color: #00d9ff;">?</a></li>
+                        </ul>
+                        <div class="save">
+                            <button style="height: 30px; width: 70px; border-radius: 5px; border: 1px solid; margin-top: 20px; cursor: pointer;" id="salvar" class="btn-save-clear">Salvar</button>
+                            <button style="height: 30px; width: 120px; border-radius: 5px; border: 1px solid; margin-left: 10px; cursor: pointer;" id="limpar" class="btn-save-clear">Limpar Seleção</button>
+                            <button style="height: 30px; width: 120px; border-radius: 5px; border: 1px solid; margin-left: 10px; cursor: pointer;" id="imprimir" class="btn-pdf">Imprimir</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="other-types">
+                    <h1>Outros tipos de imagens</h1>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const checkboxes = document.querySelectorAll('.check');
+        const salvarButton = document.getElementById('salvar');
+        const limparButton = document.getElementById('limpar');
+        const imprimirButton = document.getElementById('imprimir');
+
+        // Restaurar checkboxes  
+        checkboxes.forEach(function(checkbox) {
+            const checked = localStorage.getItem(checkbox.name);
+            if (checked === 'true') {
+                checkbox.checked = true;
+            } else if (checked === 'false') {
+                checkbox.checked = false;
+            }
+        });
+
+        // Adicionar evento para salvar
+        salvarButton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Armazena checkbox
+            checkboxes.forEach(function(checkbox) {
+                localStorage.setItem(checkbox.name, checkbox.checked);
+            });
+
+            alert('Checkbox salvo com sucesso!');
+        });
+         // Adicionarevento para limpar a seleção
+         limparButton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Limpa a seleção de todos os checkboxes
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+                localStorage.removeItem(checkbox.name);
+            });
+
+            alert('Seleção limpa com sucesso!');
+        });
+        
+        imprimirButton.addEventListener('click', function() {
+            window.print();
+        });
+    </script>
+    
+    
+</body>
+</html>
